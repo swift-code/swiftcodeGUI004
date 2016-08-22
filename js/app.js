@@ -41,6 +41,7 @@ app.controller('signupCtrl', ['$scope', '$location', '$http', function($scope, $
         });
         request.success(function(data){
           var response = angular.fromJson(data);
+<<<<<<< HEAD
           if(!response["error"]){
             sessionStorage.userId = response["id"];
             sessionStorage.email=response["email"];
@@ -51,6 +52,12 @@ app.controller('signupCtrl', ['$scope', '$location', '$http', function($scope, $
           }
         });
         request.error(function(data){
+=======
+          console.log(response);
+        });
+        request.error(function(data){
+          var response = angular.fromJson(data);
+>>>>>>> f13252630f0dd8799f66246b2ba2c789dcd05a7c
           console.log(response);
         });
     }
@@ -58,13 +65,17 @@ app.controller('signupCtrl', ['$scope', '$location', '$http', function($scope, $
 }]);
 app.controller('loginCtrl', ['$scope', '$location', '$http', function($scope, $location, $http){
   this.loginData = {};
+<<<<<<< HEAD
   //this.re=0;
+=======
+>>>>>>> f13252630f0dd8799f66246b2ba2c789dcd05a7c
   $scope.login = function() {
 
       var request = $http({
           method: 'POST',
           url: URL + "login",
           data: this.loginData
+<<<<<<< HEAD
 
       });
       //this.re =1
@@ -78,12 +89,18 @@ app.controller('loginCtrl', ['$scope', '$location', '$http', function($scope, $l
         } else {
           $scope.responseMessage = response["message"][0];
         }
+=======
+      });
+      request.success(function(data){
+        var response = angular.fromJson(data);
+>>>>>>> f13252630f0dd8799f66246b2ba2c789dcd05a7c
         console.log(response);
       });
       request.error(function(data){
         var response = angular.fromJson(data);
         console.log(response);
       });
+<<<<<<< HEAD
       //console.log("rember me clicked");
   }
 
@@ -155,3 +172,8 @@ app.controller('dashboardCtrl', ['$scope', '$location', '$http', '$cookies', fun
 
 
 }]);
+=======
+  }
+}]);
+app.controller('dashboardCtrl', ['$scope', '$location', '$http', function($scope, $location, $http){}]);
+>>>>>>> f13252630f0dd8799f66246b2ba2c789dcd05a7c
